@@ -6,13 +6,10 @@
 #include "Menu.h"
 #include "Quicksort.h"
 
-
 int main()
 {
 	setlocale(LC_ALL, "spanish");
-
 	Libro libros[MAX];
-
 	menu(libros);
 }
 

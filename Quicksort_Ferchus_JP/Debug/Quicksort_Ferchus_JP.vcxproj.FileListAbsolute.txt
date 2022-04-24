@@ -1,1 +1,6 @@
 C:\Users\super\source\repos\Quicksort_Ferchus_JP\Debug\Quicksort_Ferchus_JP.exe
+<<<<<<< Updated upstream
+=======
+C:\Users\juanp\OneDrive\Documentos\GitHub\Quicksort_Ferchus_JP\Quicksort_Ferchus_JP\Debug\Quicksort_Ferchus_JP.exe
+E:\Documents\Amerike\2do Semestre\Tecnología de la programación\Quicksort\Quicksort_Ferchus_JP\Quicksort_Ferchus_JP\Debug\Quicksort_Ferchus_JP.exe
+>>>>>>> Stashed changes

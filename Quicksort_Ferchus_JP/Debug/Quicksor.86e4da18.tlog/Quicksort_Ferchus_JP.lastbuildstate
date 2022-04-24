@@ -1,2 +1,6 @@
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30037:VCServicingVersionATL=14.29.30038:VCServicingVersionCrtHeaders=14.29.30040:VCServicingVersionCompilers=14.29.30040:TargetPlatformVersion=10.0.19041.0:
+<<<<<<< Updated upstream
 Debug|Win32|C:\Users\super\source\repos\Quicksort_Ferchus_JP\|
+=======
+Debug|Win32|E:\Documents\Amerike\2do Semestre\Tecnología de la programación\Quicksort\Quicksort_Ferchus_JP\Quicksort_Ferchus_JP\|
+>>>>>>> Stashed changes

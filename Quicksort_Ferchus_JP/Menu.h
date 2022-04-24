@@ -5,3 +5,6 @@
 #define MAX 6
 
 void menu(Libro libros[]);
+void llenarArreglo(Libro libros[]);
+void mostrarArreglo(Libro libros[]);
+void buscarLibro(Libro libros[]);

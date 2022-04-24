@@ -1,7 +1,6 @@
 #include "Menu.h"
 
-void llenarArreglo(Libro libros[]);
-void mostrarArreglo(Libro libros[]);
+
 
 void menu(Libro libros[])
 {
@@ -32,6 +31,12 @@ void menu(Libro libros[])
 			std::cin.ignore();
 			std::cin.get();
 			menu(libros);
+			break;
+		case 4:
+			buscarLibro(libros);
+			break;
+		case 5:
+			std::cout << "¡Gracias, tenga un gran día!" << std::endl;
 			break;
 
 		default:
@@ -79,6 +84,41 @@ void mostrarArreglo(Libro libros[])
 		std::cout << "Autor: " << libros[i].autor << std::endl;
 		std::cout << "N. Páginas: " << libros[i].nPaginas << std::endl << std::endl;
 	}
+	std::cout << "Presiona enter para volver al menu.";
+	std::cin.ignore();
+	std::cin.get();
+	menu(libros);
+}
+
+void buscarLibro(Libro libros[])
+{
+	int isbnBuscar, inf = 0, sup = (MAX - 1), mitad;
+	system("cls");
+	std::cout << "Escriba el ISBN del libro que quiere buscar: ";
+	std::cin >> isbnBuscar;
+	std::cout << std::endl;
+	while (inf <= sup)
+	{
+		mitad = (inf + sup) / 2;
+		if (libros[mitad].isbn == isbnBuscar)
+		{
+			std::cout << "El ISBN proporcionado está ligado al libro: " << libros[mitad].nombre << ".\nCuyo autor es: " << libros[mitad].autor << ".\nY tiene: " << libros[mitad].nPaginas << " número de páginas." << std::endl;
+			break;
+		}
+		if (libros[mitad].isbn > isbnBuscar)
+		{
+			sup = mitad - 1;
+			mitad = (inf + sup) / 2;
+		}
+		if (libros[mitad].isbn < isbnBuscar)
+		{
+			inf = mitad + 1;
+			mitad = (inf + sup) / 2;
+		}
+	}
+
+	if (libros[mitad].isbn != isbnBuscar) std::cout << "No existe un libro con ese ISBN" << std::endl << std::endl;
+
 	std::cout << "Presiona enter para volver al menu.";
 	std::cin.ignore();
 	std::cin.get();
