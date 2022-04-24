@@ -1,13 +1,11 @@
 #include "Menu.h"
 
-
-
 void menu(Libro libros[])
 {
 	int select;
 
 	system("CLS");
-	std::cout << "Bienvenido a la librería Amerike, ¿Qué es lo que quieres hacer?" << std::endl << std::endl;
+	std::cout << "Bienvenido a la librerÃ­a Amerike, Â¿QuÃ© es lo que quieres hacer?" << std::endl << std::endl;
 
 	std::cout << "1. Donar libros." << std::endl;
 	std::cout << "2. Mostrar libros." << std::endl;
@@ -27,7 +25,7 @@ void menu(Libro libros[])
 		case 3:
 			quickSort(libros, 0, MAX - 1);
 			system("CLS");
-			std::cout << "Tus libros han sido ordenados por ISBN\n\nPresiona enter para volver al menú.";
+			std::cout << "Tus libros han sido ordenados por ISBN\n\nPresiona enter para volver al menÃº.";
 			std::cin.ignore();
 			std::cin.get();
 			menu(libros);
@@ -36,12 +34,12 @@ void menu(Libro libros[])
 			buscarLibro(libros);
 			break;
 		case 5:
-			std::cout << "¡Gracias, tenga un gran día!" << std::endl;
+			std::cout << "Â¡Gracias, tenga un gran dÃ­a!" << std::endl;
 			break;
 
 		default:
 			system("CLS");
-			std::cout << "Opción inválida. Presione enter para intentar de nuevo" << std::endl;
+			std::cout << "OpciÃ³n invÃ¡lida. Presione enter para intentar de nuevo" << std::endl;
 			std::cin.ignore();
 			std::cin.get();
 			menu(libros);
@@ -62,12 +60,12 @@ void llenarArreglo(Libro libros[])
 		std::getline(std::cin, libros[i].nombre);
 		std::cout << "Autor: ";
 		std::getline(std::cin, libros[i].autor);
-		std::cout << "N. Páginas: ";
+		std::cout << "N. PÃ¡ginas: ";
 		std::cin >> libros[i].nPaginas;
 		std::cout << std::endl;
 	}
 	system("CLS");
-	std::cout << "¡Gracias por donar!\n\nPresiona enter para volver al menú.";
+	std::cout << "Â¡Gracias por donar!\n\nPresiona enter para volver al menÃº.";
 	std::cin.ignore();
 	std::cin.get();
 	menu(libros);
@@ -82,7 +80,7 @@ void mostrarArreglo(Libro libros[])
 		std::cout << "ISBN: " << libros[i].isbn << std::endl;
 		std::cout << "Nombre: " << libros[i].nombre << std::endl;
 		std::cout << "Autor: " << libros[i].autor << std::endl;
-		std::cout << "N. Páginas: " << libros[i].nPaginas << std::endl << std::endl;
+		std::cout << "N. PÃ¡ginas: " << libros[i].nPaginas << std::endl << std::endl;
 	}
 	std::cout << "Presiona enter para volver al menu.";
 	std::cin.ignore();
@@ -102,7 +100,7 @@ void buscarLibro(Libro libros[])
 		mitad = (inf + sup) / 2;
 		if (libros[mitad].isbn == isbnBuscar)
 		{
-			std::cout << "El ISBN proporcionado está ligado al libro: " << libros[mitad].nombre << ".\nCuyo autor es: " << libros[mitad].autor << ".\nY tiene: " << libros[mitad].nPaginas << " número de páginas." << std::endl;
+			std::cout << "El ISBN proporcionado estÃ¡ ligado al libro: " << libros[mitad].nombre << ".\nCuyo autor es: " << libros[mitad].autor << ".\nY tiene: " << libros[mitad].nPaginas << " nÃºmero de pÃ¡ginas." << std::endl;
 			break;
 		}
 		if (libros[mitad].isbn > isbnBuscar)
