@@ -1,0 +1,8 @@
+﻿  Main.cpp
+  Menu.cpp
+  Quicksort.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 112 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Quicksort_Ferchus_JP.vcxproj -> C:\Users\super\source\repos\Quicksort_Ferchus_JP\Release\Quicksort_Ferchus_JP.exe
