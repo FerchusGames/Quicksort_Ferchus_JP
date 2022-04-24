@@ -1,8 +1,6 @@
 #include "Menu.h"
 
-void llenarArreglo(Libro libros[]);
-void mostrarArreglo(Libro libros[]);
-void buscarLibro(Libro libros[]);
+
 
 void menu(Libro libros[])
 {
@@ -14,8 +12,6 @@ void menu(Libro libros[])
 	std::cout << "1. Donar libros." << std::endl;
 	std::cout << "2. Mostrar libros." << std::endl;
 	std::cout << "3. Ordenar libros." << std::endl;
-	std::cout << "4. Buscar libro por ISBN." << std::endl;
-	std::cout << "5. Salir." << std::endl; 
 	std::cin >> select;
 
 	switch (select)
@@ -40,7 +36,7 @@ void menu(Libro libros[])
 			buscarLibro(libros);
 			break;
 		case 5:
-			std::cout << "Gracias, tenga un gran dia!" << std::endl;
+			std::cout << "¡Gracias, tenga un gran día!" << std::endl;
 			break;
 
 		default:
@@ -98,27 +94,31 @@ void buscarLibro(Libro libros[])
 {
 	int isbnBuscar, inf = 0, sup = (MAX - 1), mitad;
 	system("cls");
-	std::cout << "Escriba el ISBN del libro que quiere buscar: " << std::endl;
+	std::cout << "Escriba el ISBN del libro que quiere buscar: ";
 	std::cin >> isbnBuscar;
+	std::cout << std::endl;
 	while (inf <= sup)
 	{
 		mitad = (inf + sup) / 2;
 		if (libros[mitad].isbn == isbnBuscar)
 		{
-			std::cout << "El ISBN proporcionado esta ligado al libro: " << libros[mitad].nombre << ".\nCuyo autor es: " << libros[mitad].autor << ".\nY tiene: " << libros[mitad].nPaginas << " numero de paginas." << std::endl;
+			std::cout << "El ISBN proporcionado está ligado al libro: " << libros[mitad].nombre << ".\nCuyo autor es: " << libros[mitad].autor << ".\nY tiene: " << libros[mitad].nPaginas << " número de páginas." << std::endl;
 			break;
 		}
 		if (libros[mitad].isbn > isbnBuscar)
 		{
-			sup = mitad;
+			sup = mitad - 1;
 			mitad = (inf + sup) / 2;
 		}
 		if (libros[mitad].isbn < isbnBuscar)
 		{
-			inf = mitad;
+			inf = mitad + 1;
 			mitad = (inf + sup) / 2;
 		}
 	}
+
+	if (libros[mitad].isbn != isbnBuscar) std::cout << "No existe un libro con ese ISBN" << std::endl << std::endl;
+
 	std::cout << "Presiona enter para volver al menu.";
 	std::cin.ignore();
 	std::cin.get();
