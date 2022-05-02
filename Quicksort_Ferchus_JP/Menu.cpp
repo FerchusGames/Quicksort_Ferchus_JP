@@ -10,6 +10,7 @@ void menu(Libro libros[])
 	std::cout << "1. Donar libros." << std::endl;
 	std::cout << "2. Mostrar libros." << std::endl;
 	std::cout << "3. Ordenar libros." << std::endl;
+	std::cout << "4. Buscar un libro por ISBN." << std::endl;
 	std::cin >> select;
 
 	switch (select)
